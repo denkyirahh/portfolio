@@ -7,7 +7,6 @@
 }
 
 html {
-  margin-top: 70px;
   scroll-behavior: smooth;
 }
 
@@ -29,7 +28,12 @@ a {
   position: relative;
 }
 
-a:after {
+.project-tile a {
+  color: black;
+}
+
+#navbar a:after,
+#profile-link a:after {
   background: none repeat scroll 0 0 transparent;
   bottom: 0;
   content: "";
@@ -42,7 +46,8 @@ a:after {
   width: 0;
 }
 
-a:hover:after {
+#navbar a:hover:after,
+#profile-link a:hover:after {
   width: 100%;
   left: 0;
 }
@@ -58,12 +63,13 @@ a:hover:after {
   top: 0;
   width: 100%;
   text-align: center;
+  z-index: 2;
 }
 
 #navbar a:link,
 #navbar a:visited {
   color: white;
-  padding: 10px 25px;
+  padding: 25px 25px;
 }
 
 ul {
@@ -84,21 +90,28 @@ ul li {
   min-width: 100px;
   max-width: 100%;
   border: 15px outset black;
-  padding: 100px;
+  margin-top: 100px;
+  padding: 400px 0;
   text-align: center;
 }
 
+#about h1 {
+  font-size: 30px;
+}
+
 #about p {
-  font-size: 12px;
+  font-size: 18px;
 }
 
 #projects {
   background-color: white;
-  padding: 10px;
+  padding: 125px 0;
+  margin: 20px 0;
 }
 
 #projects h1 {
   text-align: center;
+  padding-bottom: 50px;
 }
 
 #project-grid {
@@ -115,12 +128,20 @@ ul li {
   max-width: 300px;
   height: auto;
   object-fit: cover;
+  padding-top: 25px;
 }
 
 .project-tile {
   border: 10px;
   max-width: 300px;
   display: inline;
+}
+
+.project-tile:hover {
+  filter: blur(1px);
+  opacity: 0.5;
+  transform: scale(0.98);
+  box-shadow: none;
 }
 
 .project-title {
@@ -132,11 +153,17 @@ ul li {
   background-color: black;
   text-align: center;
   color: white;
+  padding-top: 350px;
+  padding-bottom: 350px;
+}
+
+#profile-link h1 {
+  font-size: 30px;
 }
 
 #profile-link a:link,
 #profile-link a:visited {
   color: white;
-  padding: 15px 25px;
+  padding: 30px 25px;
   display: inline-block;
 }
